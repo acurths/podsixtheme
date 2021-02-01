@@ -1,0 +1,9 @@
+<div id='cart-slider'>
+    <div class="slider-shopping-cart">
+        <a class="cart-trigger"><i class="fal fa-times"></i></a>
+        <div id="minicart-content-wrapper" class="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+        <?= $block->getChildHtml('minicart.addons') ?>
+    </div>
+</div>

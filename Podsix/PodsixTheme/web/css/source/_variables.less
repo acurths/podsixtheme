@@ -1,0 +1,113 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Blank theme variables
+//  _____________________________________________
+
+//Variables
+
+@color-primary:  #1d1d1d;
+@color-secondary: #666;
+@color-accent: #999;
+@color-action: #3d3d3d;
+@color-light-bg: #ededed;
+@color-lighter-bg: #f8f8f8;
+@color-lightest-bg: #fafafa;
+@color-border: #c2c2c2;
+@font-size: 16px;
+@font-color: #1d1d1d;
+@color-text: #1d1d1d;
+@border: 1px solid @color-border;
+@padding: 0;
+@header-margin: 0;
+@box-shadow: 0 10px 40px rgba(65, 61, 0, 0.06);
+@box-shadow-hover: 0px 10px 40px rgba(0, 0, 0, 0.18);
+@navigation__background: transparent;
+@footer-color: #000000;
+@letter-spacing: .02em;
+
+
+
+//@stringVar:" with LESS";
+
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Fonts
+
+
+//Google Fonts
+
+@font-primary: 'Rubik', sans-serif;
+@font-secondary: 'Rubik', sans-serif;
+@font-body: 'Rubik', sans-serif;
+@font-family-name__base: 'Rubik', sans-serif;
+
+
+//@FontFace Fonts :    _typography.less
+
+//@font-primary: 'Futura', sans-serif;
+//@font-secondary: 'Futura', sans-serif;
+//@font-body: 'Futura', sans-serif;
+//@font-family-name__base: 'Futura', sans-serif;
+//@font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+
+
+
+
+//
+//  Sections variables
+//  _____________________________________________
+
+//
+//  Tabs
+//  ---------------------------------------------
+@tab-content__border-top-status: true;
+
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+@sidebar__background-color: @color-white-smoke; // Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background
+
+
+// Text Color Mixins
+
+.text-color(@a) when (lightness(@a) >= 20%) {
+    color: #1d1d1d;
+}
+
+.text-color(@a) when (lightness(@a) < 80%) {
+    color: #fff;
+}
+
+
+//Mixins
+
+.radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -o-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.transition-properties(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -o-transition: @transition;
+    -ms-transition: @transition;
+    transition: @transition;
+}
+
+.border {
+    border: @border;
+    .radius(4px);
+}

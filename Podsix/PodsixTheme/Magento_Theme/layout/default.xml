@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <!-- Sitewide Notice -->
+        <referenceContainer name="sitewide-notice">
+            <block class="Magento\Framework\View\Element\Template" name="sitewide.notice" as="sitewide_notice" template="Podsix_Theme::html/header/sitewide-notice.phtml"/>
+        </referenceContainer>
+
+        <move element="sitewide.notice" destination="header.container" before="-"/>
+
+
+        <!-- HEADER -->
+
+        <!-- HEADER SECTION -->
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="ps_header" template="Magento_Theme::html/header.phtml" before="main.content">
+
+                <referenceBlock name="header-top">
+                    <block class="Magento\Framework\View\Element\Template" name="header.top" as="header_top" template="Podsix_Theme::html/header/header-top.phtml"/>
+                </referenceBlock>
+
+
+                <!-- Default Search -->
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="top_search" template="Magento_Search::form.mini.phtml"/>
+
+                <!-- Remove Default Search Bar -->
+                <!-- <referenceBlock name="top.search" remove="true" /> -->
+
+                <!-- END Default Search -->
+                <referenceBlock name="header-toggle-search">
+                <block class="Magento\Framework\View\Element\Template" name="toggle.search" as="toggle_search" template="Podsix_Theme::html/header/header-elements/search-toggle.phtml"/>
+                </referenceBlock>
+
+                <referenceBlock name="header-icons">
+                    <block class="Magento\Framework\View\Element\Template" name="header.icons" as="header_icons" template="Podsix_Theme::html/header/header-icons.phtml"/>
+                    <!-- Account -->
+                    <block name="header.account" as="header_account" template="Podsix_Theme::html/header/header-elements/header-account.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="toggle.account" as="toggle_account" template="Podsix_Theme::html/header/header-elements/account-toggle.phtml"/>
+                    </block>
+                    <!-- Search Toggle -->
+                    <block name="header.search" as="header_search" template="Podsix_Theme::html/header/header-elements/header-search.phtml">
+                    </block>
+                    <!-- Cart Slider -->
+                    <block name="toggle-cart">
+                        <block class="Magento\Framework\View\Element\Template" name="toggle.cart" as="toggle_cart" template="Magento_Checkout::cart/cart-slider.phtml"/>
+                    </block>
+                </referenceBlock>
+
+                <referenceBlock name="header-bottom">
+                    <block class="Magento\Framework\View\Element\Template" name="header.bottom" as="header_bottom" template="Podsix_Theme::html/header/header-bottom.phtml"/>
+                </referenceBlock>
+
+            </block>
+        </referenceContainer>
+
+        <move element="ps_header" destination="header.container"/>
+        <move element="header.top" destination="header.container" before="ps_header"/>
+        <move element="navigation.sections" destination="ps_header"/>
+        <move element="top.search" destination="ps_header"/>
+        <move element="header.search" destination="header.icons" />
+        <move element="header.account" destination="header.icons" />
+        <move element="header.icons" destination="ps_header" before="minicart"/>
+        <move element="minicart" destination="ps_header"/>
+        <move element="logo" destination="ps_header"/>
+        <move element="toggle.search" destination="ps_header" after="-"/>
+        <move element="header.bottom" destination="header.container" after="-"/>
+        <move element="breadcrumbs" destination="main.content" before="-"/>
+
+
+        <!-- Move Cart Toggle -->
+        <move element="toggle.cart" destination="page.wrapper" before="-"/>
+
+        <referenceBlock name="header-wrapper" remove="true"/>
+
+        <!-- END HEADER SECTION -->
+
+
+        <!-- BLOCKS - General -->
+
+        <!-- Sidebar Banners-->
+        <referenceBlock name="sidebar-banners">
+            <block class="Magento\Framework\View\Element\Template" name="sidebar.banners" template="Podsix_Theme::html/sidebar/sidebar-banners.phtml">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">category-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <move element="sidebar.banners" destination="div.sidebar.main" after="-"/>
+
+        <!-- Newsletter -->
+        <referenceBlock name="newsletter-block">
+            <block class="Magento\Framework\View\Element\Template" name="newsletter.block" as="newsletter_block" template="Podsix_Theme::html/blocks/newsletter.phtml"/>
+        </referenceBlock>
+
+
+        <!-- Video Modal -->
+        <referenceBlock name="video-modal">
+            <block class="Magento\Framework\View\Element\Template" name="video.modal" as="video_modal" template="Podsix_Theme::html/blocks/video-modal.phtml"/>
+        </referenceBlock>
+
+        <!-- END BLOCKS - General -->
+
+        <!-- FOOTER SECTION -->
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer.section.top" as="footer_section_top" template="Podsix_Theme::html/footer/footer-top.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer.section.main" as="footer_section_main" template="Podsix_Theme::html/footer/footer-main.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer.section.bottom" as="footer_section_bottom" template="Podsix_Theme::html/footer/footer-bottom.phtml"/>
+        </referenceContainer>
+
+        <!-- END FOOTER SECTION -->
+
+        <!-- MOVED BLOCKS -->
+
+        <move element="newsletter.block" destination="footer-container" before="-"/>
+        <move element="video.modal" destination="footer-container" before="-"/>
+
+
+        <!-- REMOVED BLOCKS-->
+
+        <referenceBlock name="store.links" remove="true" />
+        <referenceBlock name="store.settings" remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true"/>
+        <referenceBlock name="header.panel" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+
+
+    </body>
+</page>

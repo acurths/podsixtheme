@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+        <!-- Bootstrap core CSS -->
+<!--        <css src="css/bootstrap-grid.css" rel="stylesheet" type="text/css" media="all"/>-->
+        <css src="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+
+        <!-- Owl Carousel -->
+        <css src="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all" />
+        <css src="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" media="all" />
+
+        <!-- Google Fonts -->
+         <link src="//fonts.googleapis.com/css?family=Rubik" src_type="url" rel="stylesheet" type="text/css"/>
+
+        <!-- @ Font -->
+        <css src="css/fonts/css/fonts.css" rel="stylesheet" type="text/css" media="all"/>
+
+        <!-- Font Awesome -->
+        <css src="css/fontawesome/css/all.css"/>
+
+        <!-- Main Stylesheet -->
+        <css src="css/style.css" rel="stylesheet" type="text/css" />
+
+        <!-- Theme js -->
+        <script src="js/main.js"/>
+<!--        <script src="js/bootstrap.bundle.js"/>-->
+
+    </head>
+</page>

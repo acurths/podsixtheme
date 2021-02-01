@@ -1,0 +1,25 @@
+
+
+<div class="dd-account-nav" id="dd-account-nav">
+    <?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+    if($customerSession->isLoggedIn()) : ?>
+        <p>
+            <a href="<?php echo $this->getUrl("customer/account");?>"><i class="fal fa-user"></i><?php echo __('Account')?></a>
+        </p>
+    <?php else: ?>
+        <p>
+            <a href="<?php echo $this->getUrl("customer/account/login");?>"><i class="fal fa-sign-in"></i><?php echo __('Sign in')?></a>
+        </p>
+    <?php endif;?>
+
+
+
+    <?php if($customerSession->isLoggedIn()) : ?>
+        <p><a href="<?php echo $block->getUrl('sales/order/history', ['_secure' => true]);?>"><i class="fal fa-shopping-bag"></i>Orders</a></p>
+        <p class="header_account_link_list">
+            <a class= "header_account_link" href="<?php echo $this->getUrl("customer/account/logout");?>"><i class="fal fa-sign-out"></i><?php echo __('Log out')?></a>
+        </p>
+    <?php endif;?>
+</div>

@@ -1,0 +1,2 @@
+# PodsixTheme
+   design*                 app/design/frontend/Podsix/PodsixTheme

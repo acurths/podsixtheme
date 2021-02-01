@@ -1,0 +1,53 @@
+<div class="container video-modal">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="video-modal-img">
+                <img src='<?php echo $this->getViewFileUrl('images/placeholder.jpg'); ?>' alt="Placeholder Image">
+                <a data-trigger="video-modal-trigger"><i class="fad fa-play-circle "></i></a>
+            </div>
+            <div id="video-modal" style="display:none;">
+                <div class="content">
+                    <iframe id="video-youtube" src="https://www.youtube.com/embed/r5vpdjtwE8k"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    require([
+            'jquery', 'Magento_Ui/js/modal/modal'
+        ], function ($, modal) {
+            var options = {
+                type: 'popup',
+                modalClass: 'video-modal',
+                title: '',
+                trigger: '[data-trigger=video-modal-trigger]',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: 'close-modal',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#video-modal'));
+            $(".video-modal-play").on('click', function () {
+                $("#video-modal").modal("openModal");
+            });
+
+            $('.video-modal').on('modalclosed', function () {
+
+                var video = $("#video-youtube").attr("src");
+                $("#video-youtube").attr("src", "");
+                $("#video-youtube").attr("src", video);
+
+            });
+        }
+    );
+</script>

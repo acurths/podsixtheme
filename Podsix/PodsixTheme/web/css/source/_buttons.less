@@ -1,0 +1,164 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    a.action.primary,
+    .action.primary,
+    .action.action-login,
+    .action-accept {
+        font-family: @font-primary;
+        background: @color-primary;
+        border: 2px solid @color-primary;
+        padding: 15px 36px 15px 36px;
+        font-weight: 600;
+        font-size: @font-size;
+        .radius(2px);
+        line-height: 1em;
+        color: #fff;
+
+        &:hover {
+            box-shadow: @box-shadow;
+            background: darken(@color-primary, 5%);
+            border: 2px solid darken(@color-primary, 5%);
+        }
+    }
+
+    button.primary {
+        background: @color-accent;
+        border: 2px solid @color-accent;
+        padding: 17px 36px 15px 36px;
+        font-weight: 600;
+        font-size: @font-size;
+        .radius(2px);
+        line-height: 1em;
+        color: #fff;
+        font-family: @font-primary;
+        letter-spacing: @letter-spacing;
+
+        &:hover {
+            box-shadow: @box-shadow;
+            background: darken(@color-accent, 5%);
+            border: 2px solid darken(@color-accent, 5%);
+            .text-color(@color-accent);
+        }
+    }
+
+
+    button.secondary, .action-dismiss {
+        background: @color-secondary;
+        border: 2px solid @color-secondary;
+        padding: 17px 36px 15px 36px;
+        font-weight: 600;
+        font-size: @font-size;
+        .radius(2px);
+        line-height: 1em;
+        margin-bottom: 15px !important;
+        color: #fff;
+        font-family: @font-primary;
+        letter-spacing: @letter-spacing;
+
+        &:hover {
+            box-shadow: @box-shadow;
+            background: darken(@color-secondary, 5%);
+            border: 2px solid darken(@color-secondary, 5%);
+            .text-color(@color-secondary);
+        }
+    }
+
+    button.action.primary.checkout {
+        .radius(4px);
+    }
+
+    .minicart-content-wrapper button.action.primary.checkout,
+    .cart-container button.action.primary.checkout {
+        background-color: @color-primary;
+        border-color: @color-primary;
+        padding: 15px 36px 15px 36px;
+        color: #fff;
+    }
+
+    .minicart-content-wrapper button.action.primary.checkout:hover,
+    .cart-container button.action.primary.checkout:hover {
+        background: @color-primary;
+        border-color: @color-primary;
+        color: #fff;
+    }
+
+    .cart.table-wrapper .actions-toolbar > .action {
+        font-family: @font-primary;
+        color: #1d1d1d;
+        background: transparent;
+        border: 0 solid @color-secondary;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+        .radius(0);
+        line-height: 1em;
+
+        &:hover {
+            background: transparent;
+            border: 0 solid darken(@color-secondary, 5%);
+
+        }
+
+        &:before {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 28px;
+            line-height: 28px;
+            color: #303030;
+            content: '\e606';
+            font-family: 'icons-blank-theme';
+            vertical-align: middle;
+            display: inline-block;
+            font-weight: normal;
+            overflow: hidden;
+            speak: none;
+            text-align: center;
+        }
+    }
+
+    .cart.table-wrapper .actions-toolbar > .action:last-child {
+        font-family: @font-primary;
+        color: #1d1d1d;
+        background: transparent;
+        border: 0px solid @color-secondary;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+        .radius(0);
+        line-height: 1em;
+
+        &:hover {
+
+            background: transparent;
+            border: 0px solid darken(@color-secondary, 5%);
+
+        }
+
+        &:before {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 28px;
+            line-height: 28px;
+            color: #303030;
+            content: '\e604';
+            font-family: 'icons-blank-theme';
+            vertical-align: middle;
+            display: inline-block;
+            font-weight: normal;
+            overflow: hidden;
+            speak: none;
+            text-align: center;
+        }
+    }
+
+
+}

@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+?>
+
+    <div class="account-icon" id="account-nav-trigger">
+        <svg width="25" height="26" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M15.2744 13.887C14.8819 12.9574 14.3124 12.113 13.5975 11.4008C12.8848 10.6866 12.0405 10.1172 11.1113 9.72393C11.103 9.71977 11.0946 9.71769 11.0863 9.71353C12.3825 8.7773 13.2251 7.25229 13.2251 5.53172C13.2251 2.68143 10.9157 0.37207 8.06542 0.37207C5.21513 0.37207 2.90577 2.68143 2.90577 5.53172C2.90577 7.25229 3.74837 8.7773 5.04453 9.71561C5.03621 9.71977 5.02788 9.72185 5.01956 9.72601C4.0875 10.1192 3.25113 10.683 2.53336 11.4029C1.81914 12.1156 1.2497 12.9599 0.856476 13.8891C0.470173 14.7988 0.261831 15.7741 0.242728 16.7623C0.242173 16.7845 0.246067 16.8066 0.254183 16.8272C0.262298 16.8479 0.27447 16.8668 0.289981 16.8827C0.305492 16.8986 0.324028 16.9112 0.344498 16.9198C0.364968 16.9284 0.386956 16.9329 0.409168 16.9329H1.65747C1.74901 16.9329 1.82183 16.8601 1.82391 16.7706C1.86552 15.1644 2.51048 13.6602 3.65059 12.5201C4.83024 11.3405 6.39685 10.6914 8.06542 10.6914C9.73398 10.6914 11.3006 11.3405 12.4802 12.5201C13.6204 13.6602 14.2653 15.1644 14.3069 16.7706C14.309 16.8621 14.3818 16.9329 14.4734 16.9329H15.7217C15.7439 16.9329 15.7659 16.9284 15.7863 16.9198C15.8068 16.9112 15.8253 16.8986 15.8409 16.8827C15.8564 16.8668 15.8685 16.8479 15.8767 16.8272C15.8848 16.8066 15.8887 16.7845 15.8881 16.7623C15.8673 15.7678 15.6613 14.8004 15.2744 13.887ZM8.06542 9.11018C7.11047 9.11018 6.21169 8.73777 5.53553 8.06161C4.85936 7.38545 4.48695 6.48667 4.48695 5.53172C4.48695 4.57677 4.85936 3.67799 5.53553 3.00183C6.21169 2.32566 7.11047 1.95325 8.06542 1.95325C9.02037 1.95325 9.91914 2.32566 10.5953 3.00183C11.2715 3.67799 11.6439 4.57677 11.6439 5.53172C11.6439 6.48667 11.2715 7.38545 10.5953 8.06161C9.91914 8.73777 9.02037 9.11018 8.06542 9.11018Z"
+                fill="#1D1D1D"/>
+        </svg>
+    </div>
+    <div class="dd-account-nav" id="dd-account-nav">
+        <?php
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+        if($customerSession->isLoggedIn()) : ?>
+            <p>
+                <a href="<?php echo $this->getUrl("customer/account");?>"><i class="fal fa-user"></i><?php echo __('Account')?></a>
+            </p>
+        <?php else: ?>
+            <p>
+                <a href="<?php echo $this->getUrl("customer/account/login");?>"><i class="fal fa-sign-in"></i><?php echo __('Sign in')?></a>
+            </p>
+        <?php endif;?>
+
+        <?php if($customerSession->isLoggedIn()) : ?>
+            <p><a href="<?php echo $block->getUrl('sales/order/history', ['_secure' => true]);?>"><i class="fal fa-shopping-bag"></i>Orders</a></p>
+            <p class="header_account_link_list">
+                <a class= "header_account_link" href="<?php echo $this->getUrl("customer/account/logout");?>"><i class="fal fa-sign-out"></i><?php echo __('Log out')?></a>
+            </p>
+        <?php endif;?>
+    </div>
+
+
+
+
+

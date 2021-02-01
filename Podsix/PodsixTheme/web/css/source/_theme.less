@@ -1,0 +1,206 @@
+
+// lib/web/css/source/lib   -----  @IMPORTS Location
+
+// Responsive Widths Reference
+
+//  screen__xxs: 320px;
+//  screen__xs: 480px;
+//  screen__s: 640px;
+//  screen__m: 768px;
+//  screen__l: 1024px;
+//  screen__xl: 1440px;
+
+
+//
+//  Blank theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+
+
+& when (@media-common =true) {
+
+
+
+.footer.content {
+    border-top: 0 solid #fff;
+    margin-top: 0;
+}
+
+    //ACCOUNT
+
+    .account-nav {
+        .item {
+            width: 100%;
+            a {
+                color: @font-color;
+                &:hover {
+                    background: transparent;
+                }
+            }
+            .delimiter {
+                border-top: 1px solid #ededed;
+                width: 100%;
+            }
+        }
+        .content {
+            background: @color-lighter-bg;
+            padding: 15px 0;
+        }
+
+    }
+
+    //  CHECKOUT
+
+    .cart.main.actions {
+        button.action {
+            border: 0 ;
+            background: #fff ;
+        }
+        .action.continue {
+            border: 0 ;
+            background: #fff ;
+        }
+    }
+
+    .opc-progress-bar {
+        margin: 40px 0;
+        .step-title {
+            font-family: @font-primary;
+            font-size: 36px;
+        }
+        .opc-progress-bar-item._active:before {
+            background: @color-primary;
+        }
+        .opc-progress-bar-item._active > span:before {
+            background: @color-primary;
+        }
+
+    }
+    .opc-wrapper {
+        .step-title {
+            font-family: @font-primary;
+        }
+    }
+
+    .opc-block-summary {
+        background: #fff;
+        padding: 22px 30px;
+        margin: 0 0 20px;
+        .title {
+            font-family: @font-primary;
+        }
+        .items-in-cart > .title:after {
+            top: 42px;
+        }
+
+
+
+    }
+    .column.main {
+        .block {
+            .title strong {
+                //font-size: 28px;
+            }
+        }
+    }
+
+    .cart.table-wrapper {
+        .table th,
+        .table td {
+            border-top: 0 solid #dee2e6;
+        }
+    }
+
+
+
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    //FORMS
+    .column:not(.sidebar-main) {
+        form {
+            .actions-toolbar {
+                margin-left: 0 !important;
+            }
+        }
+    }
+
+    .column:not(.sidebar-additional) {
+        form {
+            .actions-toolbar {
+                margin-left: 0 !important;
+            }
+        }
+    }
+
+    .fieldset {
+        > .field.choice:before {
+            width: 100%;
+        }
+        .legend {
+            margin-left: 0;
+        }
+
+    }
+
+    //Checkout & Cart
+
+    .cart.table-wrapper {
+        .item-actions {
+            .actions-toolbar {
+                text-align: right;
+            }
+        }
+    }
+
+
+
+
+}
+
+
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+    .block-search input {
+        left: 0;
+        margin: 15px 0;
+        position: relative;
+    }
+    #search-dd {
+        display: none;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xxs) {
+
+}
